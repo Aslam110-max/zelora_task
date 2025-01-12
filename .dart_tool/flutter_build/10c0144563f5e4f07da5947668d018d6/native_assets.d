@@ -1,0 +1,1 @@
+ /Users/mohamedaslam/zelora/zelora_task/.dart_tool/flutter_build/10c0144563f5e4f07da5947668d018d6/native_assets.yaml: 
