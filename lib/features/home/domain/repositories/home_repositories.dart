@@ -1,6 +1,14 @@
+import 'package:zelora_task/features/home/domain/model/transaction_model.dart';
 import 'package:zelora_task/features/home/domain/repositories/home_repositories_interface.dart';
+import 'package:zelora_task/utils/sample_data.dart';
 
 class HomeRepository implements HomeRepositoryInterface {
+
+@override
+  Future<RecentTransactions?> getRecentTransaction()async{
+    RecentTransactions recentTransactions = RecentTransactions.fromJson(SampleData.sampleTransactionData);
+    return recentTransactions;
+  }
   @override
   Future add(value) {
     // TODO: implement add
@@ -19,11 +27,7 @@ class HomeRepository implements HomeRepositoryInterface {
     throw UnimplementedError();
   }
 
-  @override
-  Future<void> getFavoriteItemAndStore(List<String> favoriteItems, List<String> favoriteStores) {
-    // TODO: implement getFavoriteItemAndStore
-    throw UnimplementedError();
-  }
+  
 
   @override
   Future getList() {

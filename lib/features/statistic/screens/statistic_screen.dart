@@ -29,6 +29,8 @@ class _StatisticScreenState extends State<StatisticScreen> {
   @override
   void initState() {
     super.initState();
+    Get.find<StatisticController>().getIncomeData();
+    Get.find<StatisticController>().getOutcomeData();
     selectedDate = dates.first;
   }
 

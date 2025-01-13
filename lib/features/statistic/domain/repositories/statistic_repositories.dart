@@ -1,6 +1,21 @@
+import 'package:zelora_task/features/statistic/domain/model/income_outcome_summary_model.dart';
 import 'package:zelora_task/features/statistic/domain/repositories/statistic_repositories_interface.dart';
+import 'package:zelora_task/utils/sample_data.dart';
 
 class StatisticRepository implements StatisticRepositoryInterface {
+
+  @override
+  Future<IncomeOutcomeSummary?> getIncomeData()async{
+    IncomeOutcomeSummary incomeData  = IncomeOutcomeSummary.fromJson(SampleData.sampleIncomeData);
+    return incomeData;
+  }
+
+  @override
+  Future<IncomeOutcomeSummary?> getOutcomeData()async{
+    IncomeOutcomeSummary outcomeData  = IncomeOutcomeSummary.fromJson(SampleData.sampleOutcomeData);
+    return outcomeData;
+  }
+  
   @override
   Future add(value) {
     // TODO: implement add
@@ -19,11 +34,7 @@ class StatisticRepository implements StatisticRepositoryInterface {
     throw UnimplementedError();
   }
 
-  @override
-  Future<void> getFavoriteItemAndStore(List<String> favoriteItems, List<String> favoriteStores) {
-    // TODO: implement getFavoriteItemAndStore
-    throw UnimplementedError();
-  }
+  
 
   @override
   Future getList() {

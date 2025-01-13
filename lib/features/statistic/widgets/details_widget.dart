@@ -4,19 +4,26 @@ import 'package:zelora_task/utils/dimensions.dart';
 import 'package:zelora_task/utils/styles.dart';
 
 class DetailsWidget extends StatelessWidget {
-  const DetailsWidget({super.key});
+  final String type;
+  final double value;
+  final double percentage;
+  final Color color;
+  const DetailsWidget({super.key, required this.color,required this.percentage, required this.type, required  this.value});
 
   @override
   Widget build(BuildContext context) {
-    Color backgroundColor = Colors.deepOrangeAccent; // Change to your dynamic background color
+    Color backgroundColor = color; // Change to your dynamic background color
     Color textColor = _getTextColor(backgroundColor);
     return Column(
       children: [
+        const SizedBox(height: 10,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Monthly Salery",style:robotoMedium),
-            Text("\$10,000.00",style:robotoBold),
+            SizedBox(
+              width: 120,
+              child: Text(type,style:robotoMedium)),
+            Text("\$${value.toStringAsFixed(0)}",style:robotoBold),
             Container(
               height: 20,
               width: 40,
@@ -24,14 +31,12 @@ class DetailsWidget extends StatelessWidget {
                 color: backgroundColor,borderRadius: BorderRadius.circular(3)
               ),
               child: Center(
-                child: Text("12%",style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall,color: textColor),),
+                child: Text("${percentage.toStringAsFixed(0)}%",style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall,color: textColor),),
               ),
             )
-
-
           ],
         ),
-        const SizedBox(height: 15,),
+        const SizedBox(height: 10,),
         const Divider(color: Color.fromARGB(30, 158, 158, 158),)
       ],
     );

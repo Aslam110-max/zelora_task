@@ -68,7 +68,9 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       onTap: () {
         dashboardController.setCurrentIndex(index);
       },
-      child:index==2?CircleAvatar(radius: 25,backgroundColor: Theme.of(context).secondaryHeaderColor,child: Center(child: CustomIcon(size: 25,svgPath: isActive? activeIcons[index]:inactiveIcons[index]),),) :Column(
+      child:index==2?
+      CircleAvatar(radius: 20,backgroundColor: Theme.of(context).secondaryHeaderColor,child: Center(child: CustomIcon(size: 20,svgPath: isActive? activeIcons[index]:inactiveIcons[index]),),) :
+      Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           CustomIcon(size: 25,svgPath: isActive? activeIcons[index]:inactiveIcons[index]),

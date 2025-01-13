@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:zelora_task/features/statistic/controllers/statistic_controller.dart';
 import 'package:zelora_task/features/statistic/domain/model/income_outcome_summary_model.dart';
 import 'package:zelora_task/features/statistic/widgets/details_widget.dart';
 import 'package:zelora_task/utils/dimensions.dart';
@@ -17,16 +19,27 @@ class TabBarViewWidget extends StatefulWidget {
 
 class _TabBarViewWidgetState extends State<TabBarViewWidget> {
   Map<String, double> dataMap = {
-    "Flutter": 5,
-    "React": 3,
-    "Xamarin": 2,
-    "Ionic": 2,
+    "Flutter": 100,
+    "React": 40,
+    "Xamarin": 300,
+    "Ionic": 240,
   };
   @override
   Widget build(BuildContext context) {
+    List<Color> colorList = [
+      Theme.of(context).secondaryHeaderColor,
+      const Color.fromARGB(255, 233, 30, 220),
+      Theme.of(context).primaryColorDark,
+      Theme.of(context).hintColor
+    ];
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
+      body: GetBuilder<StatisticController>(builder: (statisticController){
+        return statisticController.isLoading?
+        const Center(child: CircularProgressIndicator()):
+        ((widget.isIncome&&statisticController.incomeData==null)||(!widget.isIncome&&statisticController.outcomeData==null))?
+        const Center(child: Text("No data available"),):
+         Padding(
         padding: const EdgeInsets.only(
             left: Dimensions.paddingSizeLarge,
             right: Dimensions.paddingSizeLarge),
@@ -38,15 +51,10 @@ class _TabBarViewWidgetState extends State<TabBarViewWidget> {
                 height: 40,
               ),
               PieChart(
-                dataMap: dataMap,
+                dataMap:widget.isIncome?statisticController.incomePercentage:statisticController.outcomePercentage,
                 animationDuration: const Duration(milliseconds: 800),
                 chartRadius: 170,
-                colorList: [
-                  Theme.of(context).secondaryHeaderColor,
-                  const Color.fromARGB(255, 233, 30, 220),
-                  Theme.of(context).primaryColorDark,
-                  Theme.of(context).hintColor
-                ],
+                colorList: colorList,
                 initialAngleInDegree: 0,
                 chartType: ChartType.ring,
                 ringStrokeWidth: 15,
@@ -61,7 +69,7 @@ class _TabBarViewWidgetState extends State<TabBarViewWidget> {
                           fontSize: Dimensions.fontSizeExtraSmall),
                     ),
                     Text(
-                      "\$20,173,00",
+                      "\$${widget.isIncome? (statisticController.totalIncome)!.toStringAsFixed(0):(statisticController.totalOutcome)!.toStringAsFixed(0)}",
                       style: robotoBlack.copyWith(
                           fontSize: Dimensions.fontSizeExtraLarge),
                     )
@@ -89,20 +97,25 @@ class _TabBarViewWidgetState extends State<TabBarViewWidget> {
                 height: 20,
               ),
               ListView.builder(
-                itemCount: 6,
+                itemCount: widget.isIncome?statisticController.incomePercentage.length:statisticController.outcomePercentage.length,
                 shrinkWrap: true,
                 padding: const EdgeInsets.only(
                   top: Dimensions.paddingSizeExtraSmall,
                 ),
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return const DetailsWidget();
+                  return DetailsWidget(
+                    color: colorList[index], 
+                    percentage:widget.isIncome? statisticController.incomePercentage[statisticController.incomeData!.data[index].type]!:statisticController.outcomePercentage[statisticController.outcomeData!.data[index].type]!, 
+                    type:widget.isIncome?  statisticController.incomeData!.data[index].type: statisticController.outcomeData!.data[index].type, 
+                    value:widget.isIncome? statisticController.incomeData!.data[index].amount:statisticController.outcomeData!.data[index].amount);
                 },
               ),
             ],
           ),
         ),
-      ),
-    );
+         );
+
+      })    );
   }
 }

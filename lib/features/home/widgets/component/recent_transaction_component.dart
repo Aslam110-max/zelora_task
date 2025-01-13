@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:zelora_task/common/widgets/custom_image.dart';
+import 'package:zelora_task/features/home/domain/model/transaction_model.dart';
 import 'package:zelora_task/utils/dimensions.dart';
-import 'package:zelora_task/utils/images.dart';
 import 'package:zelora_task/utils/styles.dart';
 
 class RecentTransactionComponent extends StatefulWidget {
-  const RecentTransactionComponent({super.key});
+  final Transaction transaction;
+  const RecentTransactionComponent({super.key, required this.transaction});
 
   @override
   State<RecentTransactionComponent> createState() => _RecentTransactionComponentState();
@@ -23,17 +25,17 @@ class _RecentTransactionComponentState extends State<RecentTransactionComponent>
           children: [
            Row(
             children: [
-               const CircleAvatar(
-              backgroundColor: Color.fromARGB(11, 0, 0, 0),
+                CircleAvatar(
+              backgroundColor: const Color.fromARGB(11, 0, 0, 0),
               radius: Dimensions.radiusDefault*2.5,
-              child: CustomImage(imagePath: Images.stripe,height:25 ,fit: BoxFit.fill,)),
+              child: CustomImage(imagePath:widget.transaction.appIconUrl,height:25 ,fit: BoxFit.fill,)),
               const SizedBox(width: 15,),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Youtube", style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault),),
-                  Text("Subscription Payment",style: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall,color: Colors.grey),)
+                  Text(widget.transaction.appName, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault),),
+                  Text(widget.transaction.reason,style: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall,color: Colors.grey),)
                 ],
               ),
       
@@ -43,8 +45,8 @@ class _RecentTransactionComponentState extends State<RecentTransactionComponent>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("\$15,00", style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault),),
-                  Text("16 MAY 2024",style: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall,color: Colors.grey),)
+                  Text("${widget.transaction.isIncome?"+ ":""}\$${(widget.transaction.amount).toStringAsFixed(widget.transaction.isIncome?0:2)}", style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault,color: widget.transaction.isIncome?Colors.green:Colors.black),),
+                  Text(DateFormat('dd MMM yyyy').format(widget.transaction.date),style: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall,color: Colors.grey),)
                 ],
               ),
           ],

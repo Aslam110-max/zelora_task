@@ -6,22 +6,54 @@ class StatisticController extends GetxController implements GetxService {
   final StatisticServiceInterface statisticServiceInterface;
   StatisticController({required this.statisticServiceInterface});
 
+   bool _isLoading = false;
+  bool get isLoading => _isLoading;
+
   IncomeOutcomeSummary? _incomeData;
   IncomeOutcomeSummary? get incomeData=>_incomeData;
 
   IncomeOutcomeSummary? _outcomeData;
   IncomeOutcomeSummary? get outcomeData=>_outcomeData;
 
-  // void _validateSlot(List<TimeSlotModel> slots, int dateIndex, int? interval,
-  //     {bool notify = true}) {
-  //   _timeSlots =
-  //       cartServiceInterface.validateTimeSlot(slots, dateIndex, interval, true);
+  double? _totalIncome;
+  double? get totalIncome=>_totalIncome;
 
-  //   if (notify) {
-  //     WidgetsBinding.instance.addPostFrameCallback((_) {
-  //   update();
-  // });
-  //   }
-  // }
+  double? _totalOutcome;
+  double? get totalOutcome=>_totalOutcome;
+
+   Map<String,double> _incomePercentage={};
+  Map<String,double> get incomePercentage =>_incomePercentage;
+
+   Map<String,double> _outcomePercentage={};
+  Map<String,double> get outcomePercentage =>_outcomePercentage;
+
+  Future<void> getIncomeData()async{
+    _isLoading=true;
+    update();
+    IncomeOutcomeSummary? incomeData = await statisticServiceInterface.getIncomeData();
+    if(incomeData!=null){
+      _incomeData = incomeData;
+      _totalIncome =incomeData.data.fold(0.0, (sum, item) => sum! + item.amount);
+      for (var item in incomeData.data) {
+    double percentage = (item.amount / _totalIncome!) * 100;
+    _incomePercentage[item.type] = percentage;
+  }
+    }
+    update();
+  }
+
+  Future<void> getOutcomeData()async{
+    IncomeOutcomeSummary? outcomeData = await statisticServiceInterface.getOutcomeData();
+    if(outcomeData!=null){
+      _outcomeData = outcomeData;
+      _totalOutcome =outcomeData.data.fold(0.0, (sum, item) => sum! + item.amount);
+      for (var item in outcomeData.data) {
+    double percentage = (item.amount / _totalOutcome!) * 100;
+    _outcomePercentage[item.type] = percentage;
+  }
+    }
+    _isLoading=false;
+    update();
+  }
 
 }
