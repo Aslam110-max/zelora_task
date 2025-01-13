@@ -1,5 +1,3 @@
-
-
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zelora_task/common/controllers/theme_controller.dart';
