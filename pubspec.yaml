@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   flutter_svg: ^2.0.10+1
   shared_preferences: ^2.3.2
+  pie_chart: ^5.4.0
 
 dev_dependencies:
   flutter_test:

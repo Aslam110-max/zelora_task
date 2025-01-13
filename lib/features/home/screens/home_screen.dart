@@ -41,16 +41,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 250,
                           child: Text.rich(
                                     TextSpan(
-                                      text: "Let's check your ", // Regular text
+                                      text: "Let's check your ", 
                                       style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeDefault),
                                       children: [
                                         TextSpan(
-                                          text: 'Finacial Insight', // Bolded word
+                                          text: 'Finacial Insight', 
                                           style: robotoBlack.copyWith(fontSize: Dimensions.fontSizeDefault),
                                         ),
                                          TextSpan(
                                           style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeDefault),
-                                          text: ' for the month of june!', // Regular text
+                                          text: ' for the month of june!', 
                                         ),
                                       ],
                                     ),

@@ -188,6 +188,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "pie_chart",
+      "rootUri": "file:///Users/mohamedaslam/.pub-cache/hosted/pub.dev/pie_chart-5.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///Users/mohamedaslam/.pub-cache/hosted/pub.dev/platform-3.1.6",
       "packageUri": "lib/",
@@ -344,7 +350,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-01-13T07:20:54.992878Z",
+  "generated": "2025-01-13T13:08:54.972214Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/mohamedaslam/Development/flutter",
