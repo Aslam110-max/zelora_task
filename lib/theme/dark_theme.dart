@@ -2,27 +2,8 @@ import 'package:flutter/material.dart';
 
 ThemeData dark = ThemeData(
   fontFamily: 'Roboto',
-  primaryColor: const Color(0xFFFF3232),
-  secondaryHeaderColor: Color.fromARGB(255, 231, 31, 31),
-  disabledColor: const Color(0xFF6f7275),
-  brightness: Brightness.dark,
-  hintColor: const Color(0xFFbebebe),
-  cardColor: Colors.black,
-  textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(foregroundColor: const Color(0xFFFF3232))),
-  colorScheme: const ColorScheme.dark(
-          primary: Color(0xFFFF3232),
-          secondary: Color.fromARGB(255, 233, 31, 31))
-      .copyWith(error: const Color(0xFFdd3135)),
-  popupMenuTheme: const PopupMenuThemeData(
-      color: Color(0xFF29292D), surfaceTintColor: Color(0xFF29292D)),
-  dialogTheme: const DialogTheme(surfaceTintColor: Colors.white10),
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(500))),
-  bottomAppBarTheme: const BottomAppBarTheme(
-      color: Colors.black,
-      height: 60,
-      padding: EdgeInsets.symmetric(vertical: 5)),
-  dividerTheme:
-      const DividerThemeData(thickness: 0.2, color: Color(0xFFA0A4A8)),
+  primaryColor: const Color(0xFF250147),
+  primaryColorLight:const Color(0xFF1C165E) ,
+  secondaryHeaderColor:const Color(0xFF8E4EF4)  ,
+  disabledColor: const Color(0xFFBCC1C7),
 );
