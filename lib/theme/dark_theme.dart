@@ -6,5 +6,6 @@ ThemeData dark = ThemeData(
   primaryColorDark:const Color(0xFF100C30) ,
   primaryColorLight:const Color(0xFF1C165E) ,
   secondaryHeaderColor:const Color(0xFF8E4EF4)  ,
+  hintColor:const Color.fromARGB(57, 208, 179, 255) ,
   disabledColor: const Color(0xFFBCC1C7),
 );

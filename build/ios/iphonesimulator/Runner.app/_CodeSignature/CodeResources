@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		0bniHLlO8tJRlUNx0/kh7DP/llY=
+		DR6S61bUS0G8EXtzczC+e8uhz7c=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		T2jqC+CDKfjMmhQ+Cd/e6lkyKp8=
+		2A79JwgvfwN3jQavULAPRAvXspo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		Z5konF24nCO59U/zb1yMtBgnlo8=
+		OcRbWojJ4rBraMpGqZNAsHE2bXg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		b453HaheD3I0LfX6AAwm4KQIwdw=
+		G/f4yBmsJtWHyBUGoGmhJVYvG9o=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -124,6 +124,10 @@
 		<data>
 		ZZOCiO3unxiOgjX01YEFNuw+W9k=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/financial.jpg</key>
+		<data>
+		ja8QbKIuwsQuOnd4r1VpeBg3yBM=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/google-play.png</key>
 		<data>
 		lGcuNHD+OzKob22YojDyqkqag5U=
@@ -131,6 +135,10 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/images/ovo.png</key>
 		<data>
 		oaUeo7gy8X05Zs0aHvVA+74wFbI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/profile.jpg</key>
+		<data>
+		wl5Yg2Cf4tWIYU/BZGcDCEF6alw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/stripe.png</key>
 		<data>
@@ -158,7 +166,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		OzNsB44/HZN1piwQffiFrd7CprQ=
+		bYbqcOvCpY3wcSS4fWTlGkV+P54=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -373,7 +381,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qXQKZS/mC4G2ItRlfZm0yOOamau8vIb0ORZRda/RxCY=
+			SBxJgiNxTUK14DrqPQ8klhn+9PMmfX3duRTYXNLdNlE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -387,21 +395,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8fJMP/ufKEhn49F5De/RyKh6jjrFhUlko5GO/Mvm4Do=
+			8/gBYv3DQvQm65Qr7PkrIux3OM4SStpoBbzwLs3ZWsc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gTCR2n+okv3qEWf0EiLs2pBz5CRO7GCdAf1GQPFm8d8=
+			1LomPNOeye5IguAdq79NSHq4+2IsPLzv6GdNPVAb9fI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8hhk/2vMcJ6XyZ0O+hB3TbKI8V0ezVeuV3wFleK2wFQ=
+			af4pHo8C+Ys95akgXQ2Fq5CCaBZxs/GnafURR+izvvY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -509,6 +517,13 @@
 			ig2gy+iyA5IKHuSptJAHdnae6L0frkvUS5c5TV1/TEc=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/financial.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hCiv8gu3RKnGihEkrMpAdxthVDwOZWat5LMLABSUDjQ=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/google-play.png</key>
 		<dict>
 			<key>hash2</key>
@@ -521,6 +536,13 @@
 			<key>hash2</key>
 			<data>
 			bAfFfzoh0jf/m3jHanHn5/vkmQirbpCabWWV7fgRkGc=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/profile.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZcrpsS2kzWiRoK9uSius8FzVJraB4iOe1edNPm2ogPk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/stripe.png</key>
@@ -569,7 +591,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UCXwzEItu237xEjEvLuXn7wlWwOM1oCI+K3Q5HeLXyU=
+			hiILg5IE90YgKrs8d1WDNZkv6km4NrttYOcafrFnqk0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

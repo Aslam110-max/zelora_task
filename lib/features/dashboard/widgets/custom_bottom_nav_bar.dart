@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zelora_task/common/widgets/custom_icons.dart';
 import 'package:zelora_task/features/dashboard/controller/dashboard_controller.dart';
+import 'package:zelora_task/utils/dimensions.dart';
 import 'package:zelora_task/utils/styles.dart';
 import 'package:zelora_task/utils/svg_icons.dart';
 
@@ -37,7 +38,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -70,10 +71,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       child:index==2?CircleAvatar(radius: 25,backgroundColor: Theme.of(context).secondaryHeaderColor,child: Center(child: CustomIcon(size: 25,svgPath: isActive? activeIcons[index]:inactiveIcons[index]),),) :Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CustomIcon(size: 30,svgPath: isActive? activeIcons[index]:inactiveIcons[index]),
+          CustomIcon(size: 25,svgPath: isActive? activeIcons[index]:inactiveIcons[index]),
           Text(
             labels[index],
-            style: robotoRegular.copyWith(color:isActive? Theme.of(context).primaryColor:Theme.of(context).disabledColor),
+            style: robotoRegular.copyWith(color:isActive? Theme.of(context).primaryColor:Theme.of(context).disabledColor,fontSize: Dimensions.fontSizeSmall),
           ),
         ],
       ),
